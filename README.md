@@ -1,24 +1,94 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby on Rails Test Portabilis
 
-Things you may want to cover:
+This project is a Ruby on Rails that leverages the Devise framework for authentication for secure user authentication.
 
-* Ruby version
+## Environment Variables
 
-* System dependencies
+To run this project, you will need to add the following environment variables to your .env file
 
-* Configuration
+`DB_USER`
+`DB_PASS`
+`DB_HOST`
+`DB_PORT`
+`DB_NAME`
 
-* Database creation
+## Environment Setup
 
-* Database initialization
+Initialize docker:
 
-* How to run the test suite
+```bash
+  docker-compose build
+  docker-compose up
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Ensure you have Ruby and Rails installed on your system. Install project dependencies using the following command:
 
-* Deployment instructions
+```bash
+  bundle install
+```
 
-* ...
+Additionally, configure the database by running the following commands:
+
+```bash
+  rails db:create
+  rails db:migrate
+```
+
+### Start the project:
+
+```bash
+  rails s
+```
+
+### Endpoints
+
+- POST /api/v1/signup
+```bash
+  Content-Type: application/json
+  {
+    "user": {
+      "name": "name",
+      "email": "email@email.com",
+      "password": "password",
+      "password_confirmation": "password"
+    }
+  }
+```
+
+- POST /api/v1/signin
+```bash
+  Content-Type: application/json
+  {
+    "user": {
+      "email": "email@email.com",
+      "password": "password"
+    }
+  }
+```
+
+### Run test:
+
+```bash
+  rspec
+```
+
+## Contributions
+
+Contributions are always welcome!
+
+## Support
+
+For support, email contatos_leo@hotmail.com.
+
+## Tech Stack
+
+**Server:** Ruby, Rspec, Docker.
+
+## License
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+## Authors
+
+- [@leoholiveira](https://github.com/leoholiveira)
